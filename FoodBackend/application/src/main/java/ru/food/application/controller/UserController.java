@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 import ru.food.application.sevice.TaskService;
 import ru.food.usecase.user.command.create.CreateUserCommand;
+import ru.food.usecase.user.query.findById.FindByUserIdQuery;
+import ru.food.usecase.user.query.findById.FindByUserIdQueryResponse;
 
 
 @RestController
@@ -24,8 +26,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public Mono<String> doTest(@PathVariable Long id){
-
-        return null;
+    public Mono<FindByUserIdQueryResponse> doTest(@PathVariable Long id){
+        FindByUserIdQuery command = new FindByUserIdQuery(id);
+        return service.send(command).single();
     }
 }

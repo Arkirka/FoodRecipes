@@ -1,0 +1,12 @@
+rootProject.name = 'FoodBackend'
+
+include 'application'
+include 'adapter'
+include 'domain'
+include 'usecase'
+include 'infostructure'
+include 'infostructure:persistance'
+findProject(':infostructure:persistance')?.name = 'persistance'
+include 'infostructure:external'
+findProject(':infostructure:external')?.name = 'external'
+

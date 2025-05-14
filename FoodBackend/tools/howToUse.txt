@@ -1,0 +1,17 @@
+Создаем директорию в ru.food.usecase. Например, директория "test".
+Копируем абсолютный путь до директории. Например, путь "С:\моиСекретики\FoodBackend\usecase\src\main\java\ru\food\usecase\test"
+Придумываем название команды. Например, "ShowMeSomeTest"
+Вызываем в powerShell из этой (прямо из tools) директории нашу чудо-утилиту.
+Для случая с примера будет выглядеть следующим образом:
+.\generate_command_classes.ps1 "С:\моиСекретики\FoodBackend\usecase\src\main\java\ru\food\usecase\test" "ShowMeSomeTest"
+
+В результате в указанной директории загенерится след структура файлов:
+ru.food.usecase (оно уже было, для наглядности указываю)
+    test.command.showMeSome
+        ShowMeSomeTestCommand.java
+        ShowMeSomeTestCommandHandler.java
+
+Также для этих файлов загенерится дефолтное содержимое.
+
+Шаблон для ctrl+c ctrl+v
+.\generate_command_classes.ps1 "replaceMe" "replaceMe"3

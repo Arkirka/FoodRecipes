@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'ru.food'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':usecase')
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.3.1'
+    // additional
+    implementation 'org.reflections:reflections:0.10.2'
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    // test
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

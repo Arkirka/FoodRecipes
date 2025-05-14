@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.food.infostructure.persistance'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // database
+    implementation 'org.postgresql:r2dbc-postgresql:1.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.3.1'
+    implementation project(':domain')
+    // additional
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    // test
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

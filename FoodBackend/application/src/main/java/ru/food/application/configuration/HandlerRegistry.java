@@ -1,6 +1,7 @@
 package ru.food.application.configuration;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ConfigurationBuilder;
@@ -14,6 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Getter
 @SuppressWarnings("rawtypes")
 public class HandlerRegistry {
@@ -38,6 +40,7 @@ public class HandlerRegistry {
             @SuppressWarnings("unchecked")
             Class<? extends Task> taskType = (Class<? extends Task>) type.getActualTypeArguments()[0];
             handlers.put(taskType, handler);
+            log.info("Registered task handler: {}:{}", taskType, handler);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             throw new RuntimeException(
                     "Не удалось найти конструктор для класса %s. Ошибка вот такая: [%s]"

@@ -1,0 +1,7 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.food'
+version = '1.0-SNAPSHOT'
+
