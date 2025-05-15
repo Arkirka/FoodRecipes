@@ -1,4 +1,3 @@
 package ru.food.usecase.user.query.findById;
 
-public class FindByUserIdQueryResponse {
-}
+public record FindByUserIdQueryResponse(String login, String password) {}

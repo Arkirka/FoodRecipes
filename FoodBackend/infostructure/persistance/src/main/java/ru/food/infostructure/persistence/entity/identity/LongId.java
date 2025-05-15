@@ -1,4 +1,4 @@
-package ru.food.infostructure.persistance.entity.identity;
+package ru.food.infostructure.persistence.entity.identity;
 
 import org.springframework.data.annotation.Id;
 

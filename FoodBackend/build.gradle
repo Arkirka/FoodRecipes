@@ -1,7 +1,17 @@
-plugins {
-    id 'java'
+allprojects {
+    group = 'ru.food'
+    version = '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
 }
 
-group = 'ru.food'
-version = '1.0-SNAPSHOT'
+subprojects {
+    apply plugin: 'java'
 
+    dependencies {
+        implementation 'io.projectreactor:reactor-core:3.6.7'
+        implementation 'org.springframework:spring-context:6.1.14'
+    }
+}
