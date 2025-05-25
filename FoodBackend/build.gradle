@@ -13,5 +13,8 @@ subprojects {
     dependencies {
         implementation 'io.projectreactor:reactor-core:3.6.7'
         implementation 'org.springframework:spring-context:6.1.14'
+        // lombok
+        compileOnly 'org.projectlombok:lombok:1.18.32'
+        annotationProcessor 'org.projectlombok:lombok:1.18.32'
     }
 }

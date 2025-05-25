@@ -1,12 +1,8 @@
 rootProject.name = 'FoodBackend'
 
-include 'application'
+include 'gateway'
 include 'adapter'
-include 'domain'
-include 'usecase'
+include 'recipe'
+include 'cart'
 include 'infostructure'
-include 'infostructure:persistance'
-findProject(':infostructure:persistance')?.name = 'persistance'
-include 'infostructure:external'
-findProject(':infostructure:external')?.name = 'external'
 

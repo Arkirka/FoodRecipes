@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'ru.food'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // web
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.3.1'
+    // database
+    implementation 'org.postgresql:r2dbc-postgresql:1.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.3.1'
+    // additional
+    implementation 'org.reflections:reflections:0.10.2'
+    // test
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
