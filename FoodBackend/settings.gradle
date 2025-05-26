@@ -5,4 +5,6 @@ include 'adapter'
 include 'recipe'
 include 'cart'
 include 'infostructure'
-
+include 'samokat-shop'
+include 'app-main'
+include 'shared'

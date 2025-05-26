@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.food'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // inner
+    implementation project(':shared')
+    implementation project(':gateway')
+    implementation project(':recipe')
+    implementation project(':samokat-shop')
+    implementation project(':cart')
+    // base
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+    implementation("org.springframework.boot:spring-boot-starter:3.5.0")
+    // test
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

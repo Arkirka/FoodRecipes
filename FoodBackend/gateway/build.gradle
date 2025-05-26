@@ -11,6 +11,8 @@ repositories {
 }
 
 dependencies {
+    // inner
+    implementation project(':shared')
     // web
     implementation 'org.springframework.boot:spring-boot-starter-webflux:3.3.1'
     // database
