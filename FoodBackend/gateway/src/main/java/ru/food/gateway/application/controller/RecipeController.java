@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @RestController("/recipe")
 @RequiredArgsConstructor
-public class GatewayController {
+public class RecipeController {
     private final ApplicationEventPublisher publisher;
     // private final ResponseStorage responseStorage;
 
@@ -27,6 +27,7 @@ public class GatewayController {
         Mono<CartResponse> result = Mono.empty();
         // responseStorage.put(correlationId, result);
         publisher.publishEvent(new RecipeRequestEvent(this, correlationId, request));
+
         return result;
     }
 

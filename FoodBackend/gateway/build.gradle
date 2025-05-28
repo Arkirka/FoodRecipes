@@ -18,6 +18,10 @@ dependencies {
     // database
     implementation 'org.postgresql:r2dbc-postgresql:1.0.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.3.1'
+    // migration
+    implementation 'org.flywaydb:flyway-core:11.8.2'
+    implementation 'org.postgresql:postgresql:42.7.5'
+    runtimeOnly 'org.flywaydb:flyway-database-postgresql:11.8.2'
     // additional
     implementation 'org.reflections:reflections:0.10.2'
     // test

@@ -10,20 +10,20 @@ import ru.food.gateway.persistence.repository.UserRepository;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepositoryReactive;
+    private final UserRepository userRepository;
 
     @Override
     public Mono<? extends UserModel> findByLogin(String login) {
-        return userRepositoryReactive.findByLogin(login);
+        return userRepository.findByLogin(login);
     }
 
     @Override
-    public Mono<UserModel> findUserById(Long id) {
-        return userRepositoryReactive.findUserById(id);
+    public Mono<? extends UserModel> findUserById(Long id) {
+        return userRepository.findUserById(id).map(x -> new UserModel(x.getLogin()));
     }
 
     @Override
     public Mono<? extends UserModel> create(UserModel userModel) {
-        return userRepositoryReactive.create(userModel);
+        return userRepository.create(userModel);
     }
 }

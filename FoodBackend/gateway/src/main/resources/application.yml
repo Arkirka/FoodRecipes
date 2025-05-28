@@ -1,0 +1,12 @@
+package:
+  usecase: ru.food.gateway.usecase
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5430
+    username: postgres_user
+    password: postgres_user
+    name: gateway
+  flyway:
+    locations: classpath:db/migration
+    url: jdbc:postgresql://localhost:5430/gateway

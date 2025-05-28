@@ -12,11 +12,11 @@ public interface UserRepository extends ReactiveCrudRepository<User, Long> {
     @Query("SELECT * FROM USER WHERE LOGIN = :login")
     Mono<? extends UserModel> findByLogin(String login);
 
-    default Mono<UserModel> findUserById(Long id){
-        return findById(id).map(x -> new UserModel(x.getLogin()));
+    default Mono<? extends UserModel> findUserById(Long id){
+        return findById(id);
     }
 
     default Mono<? extends UserModel> create(UserModel userModel){
-        return save((User) userModel);
+        return save(new User(userModel.getLogin(), userModel.getPassword()));
     }
 }
